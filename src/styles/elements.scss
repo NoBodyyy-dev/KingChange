@@ -1,0 +1,37 @@
+@import "variables";
+
+button {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid;
+
+  &.button {
+    &.p-left {
+      padding-left: 44px;
+    }
+
+    &-telegram {
+      border: none;
+      background: $telegramBg;
+      color: $telegramColor;
+    }
+
+    &-fill-green {
+      border: none;
+      background: $fillGreenBg;
+      color: #000000;
+      padding: 12px 24px 60px;
+    }
+
+    &-green-border {
+      background: none;
+      border-color: $greenBorderColor;
+      color: $greenBorderColor;
+    }
+
+    &.x {
+      border-color: $xBorder;
+      color: #ffffff;
+    }
+  }
+}

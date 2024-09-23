@@ -1,0 +1,57 @@
+@import "variables";
+@import "global";
+@import "elements";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+}
+
+body {
+  background: $siteBg;
+}
+
+#wrapper {
+  max-width: $contentWidth;
+  min-height: 100vh;
+  margin: 0 auto;
+  border: 1px solid #ffffff;
+
+  @media screen and (max-width: $contentWidth) {
+    padding: 0 30px;
+  }
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: $headerHeight;
+  border: 1px solid #ffffff;
+
+  @media screen and (max-width: $contentWidth) {
+    padding: 0 30px;
+  }
+
+  &__container {
+    max-width: $contentWidth;
+    width: 100%;
+    border: 1px solid red;
+  }
+
+  &__links {
+    & ul {
+      grid-gap: 16px;
+
+      & li {
+        list-style: none;
+      }
+    }
+  }
+
+  &__buttons {
+    grid-gap: 8px;
+  }
+}
