@@ -14,22 +14,10 @@ body {
   background: $siteBg;
 }
 
-#wrapper {
-  max-width: $contentWidth;
-  min-height: 100vh;
-  margin: 0 auto;
-  border: 1px solid #ffffff;
-
-  @media screen and (max-width: $contentWidth) {
-    padding: 0 30px;
-  }
-}
-
 .header {
   display: flex;
   width: 100%;
   height: $headerHeight;
-  border: 1px solid #ffffff;
 
   @media screen and (max-width: $contentWidth) {
     padding: 0 30px;
@@ -37,8 +25,8 @@ body {
 
   &__container {
     max-width: $contentWidth;
+    margin: 0 auto;
     width: 100%;
-    border: 1px solid red;
   }
 
   &__links {
@@ -53,5 +41,218 @@ body {
 
   &__buttons {
     grid-gap: 8px;
+  }
+}
+
+.main {
+  padding: 56px 0;
+  min-height: 100vh;
+
+  @media screen and (max-width: $contentWidth) {
+    padding: 56px 0;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: $contentWidth;
+    margin: 0 auto 96px;
+
+    @media screen and (max-width: $contentWidth) {
+      padding: 0 30px;
+    }
+
+    &.w-full {
+      max-width: none;
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__block {
+    max-width: $mainContentWidth;
+    width: 100%;
+    margin: 0 auto;
+
+    &.statistic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 120px;
+      gap: 9px;
+    }
+
+    &.change {
+
+    }
+
+    &.rating {
+      height: 265px;
+    }
+
+    &.crypts {
+      width: 100%;
+      max-width: none;
+      position: relative;
+
+      //&::after, &::before {
+      //  content: "";
+      //  position: absolute;
+      //  height: 100%;
+      //  width: 40px;
+      //  background: rgb(0,0,0);
+      //  background: linear-gradient(90deg, rgba(0,0,0,1) 4%, rgba(0,0,0,0.8841911764705882) 32%, rgba(0,0,0,0.7525385154061625) 46%, rgba(0,0,0,0.6264880952380952) 63%, rgba(0,0,0,0.4023984593837535) 100%);
+      //}
+    }
+  }
+
+}
+
+.change {
+  &__exchange_rate {
+    width: max-content;
+    border-radius: 12px;
+    border: 1px solid $darkGray;
+    padding: 8px 13px;
+    margin: 0 auto 12px;
+  }
+
+  &__crypt {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    &__block {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: $siteBg;
+      padding: 12px;
+      border-radius: 12px;
+
+      &-input {
+        background: none;
+        outline: none;
+        border: none;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.statistic {
+  &__block {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > .flex {
+      color: $xBorder;
+      font-size: 17px;
+    }
+
+    &-result {
+      font-weight: 700;
+    }
+  }
+}
+
+.rating {
+
+
+  &__stars {
+    gap: 8px;
+    margin-bottom: 16px;
+
+    & ~ p {
+      text-align: right;
+      color: $xBorder;
+    }
+
+    &-item {
+      border-radius: 9px;
+      width: 48px;
+      height: 48px;
+      background: $fillGreenBg;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background: url("/star.svg");
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.haha {
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    border: 1px solid #fff;
+  }
+
+  & > img {
+    border: 1px solid #fff;
+  }
+}
+
+.crypts {
+  flex-wrap: nowrap;
+  padding: 5px 0;
+  gap: 16px;
+
+  &__item {
+    padding: 12px;
+    width: 150px;
+    height: 130px;
+    background: #101012;
+
+    &-logo {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 7px;
+    }
+
+    &__titles {
+      font-size: 14px;
+    }
+
+    &-change {
+      font-size: 12px;
+      width: max-content;
+      padding: 4px;
+      border-radius: 6px;
+      margin-bottom: 5px;
+      
+      &.plus {
+        background: #00804926;
+        color: $fillGreenBg;
+      }
+
+      &.minus {
+        background: #80000026;
+        color: #FF3333;
+      }
+    }
+
+    &-price {
+      font-size: 18px;
+    }
+  }
+}
+
+.footer {
+  &__links {
+    @extend .header__links;
   }
 }

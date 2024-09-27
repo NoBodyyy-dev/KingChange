@@ -1,19 +1,21 @@
 import {Link} from "react-router-dom";
 import TelegramButton from "../Buttons/TelegramButton.tsx";
 
-const Header = () => {
+const Footer = () => {
     const links = [
-        {name: "Как все работает", className: "work"},
         {name: "FAQ", className: "faq"},
         {name: "Правила сервиса", className: "rules"},
-        {name: "Контакты", className: "contacts"}
+        {name: "AML Policy", className: "policy"},
+        {name: "Как все работает", className: "work"},
+        {name: "Контакты", className: "contacts"},
+        {name: "API", className: "api"}
     ]
 
     return (
-        <header className="header">
-            <div className="header__container flex-align-center-sbetw">
+        <footer className="footer">
+            <div className="footer__container flex-align-center-sbetw">
                 <img src="/logo.svg" alt="KingChange" className="header-logo"/>
-                <nav className="header__links">
+                <nav className="footer__links">
                     <ul className="flex">
                         {links.map((link, index) => {
                             return <Link to={`/${link.className}`} key={index}>
@@ -30,8 +32,8 @@ const Header = () => {
                     <button className="button-enter p-left">Войти</button>
                 </div>
             </div>
-        </header>
+        </footer>
     );
 };
 
-export default Header;
+export default Footer;

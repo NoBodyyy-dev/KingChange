@@ -1,4 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
+import cryptSlice from "./slices/Crypt.slice.ts";
 
 export const store = configureStore({
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(
@@ -7,7 +8,7 @@ export const store = configureStore({
         }
     ),
     reducer: {
-
+        crypt: cryptSlice,
     }
 })
 

@@ -1,14 +1,19 @@
 @import "variables";
 
 button {
+  width: max-content;
+  background: none;
   padding: 12px;
   border-radius: 12px;
   border: 1px solid;
+  height: max-content;
+  font-size: 16px;
+
+  &.p-left {
+    padding-left: 44px !important;
+  }
 
   &.button {
-    &.p-left {
-      padding-left: 44px;
-    }
 
     &-telegram {
       border: none;
@@ -20,7 +25,8 @@ button {
       border: none;
       background: $fillGreenBg;
       color: #000000;
-      padding: 12px 24px 60px;
+      padding: 12px;
+      font-size: 16px;
     }
 
     &-green-border {
@@ -29,9 +35,39 @@ button {
       color: $greenBorderColor;
     }
 
-    &.x {
+    &-enter {
+      border: none;
+      background: $enterButton !important;
+    }
+
+    &-x {
       border-color: $xBorder;
       color: #ffffff;
     }
+
   }
+}
+
+.block-gradient-border {
+  border: 1px solid transparent;
+  border-radius: 24px;
+  padding: 24px;
+  position: relative;
+  background: #101012;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1;
+    border-radius: inherit;
+  }
+}
+
+.skeleton-block {
+
 }

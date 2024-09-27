@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin flexYCenter {
   display: flex;
   align-items: center;
@@ -58,6 +60,18 @@ a {
 
 .flex {
   display: flex;
+
+  &-bottom {
+    flex: 0 2;
+  }
+
+  &-col {
+    &-betw {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }
 
   &-to-center {
     @include flexYCenter;
@@ -126,7 +140,7 @@ a {
   }
 
   &-gray {
-    color: #777;
+    color: $xBorder;
   }
 
   &-prpl {
